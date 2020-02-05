@@ -1,0 +1,31 @@
+{
+  "streams": [
+    {
+      "title": "my stream",
+      "description": "this is a test stream",
+      "id": 1
+    },
+    {
+      "title": "New stream",
+      "description": "test",
+      "id": 2
+    },
+    {
+      "title": "new stream",
+      "description": "update this stream",
+      "id": 3
+    },
+    {
+      "title": "delete this",
+      "description": "delete",
+      "userId": "101356007217161365991",
+      "id": 4
+    },
+    {
+      "title": "1",
+      "description": "1",
+      "userId": "101356007217161365991",
+      "id": 5
+    }
+  ]
+}
