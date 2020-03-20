@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchStreams } from '../../actions';
+import StreamShow from './StreamShow';
 
 class StreamList extends React.Component {
   componentDidMount() {
@@ -25,21 +26,29 @@ class StreamList extends React.Component {
 
   renderList() {
     return this.props.streams.map((stream) => {
-      return (
-        <div className="item" key={stream.id}>
-          {this.renderAdmin(stream)}
-          <i className="large middle aligned icon camera" />
-          <Link className="content" to={`/streams/${stream.id}`}>
-            {stream.title}
-            <div className="description">{stream.description}</div>
-          </Link>
-        </div>
-      );
+      if (
+        !this.props.isSignedIn ||
+        (this.props.match.params.id == null &&
+          this.props.currentUserId !== stream.userId) ||
+        this.props.match.params.id === stream.userId
+      ) {
+        return (
+          <div className="item" key={stream.id}>
+            {this.renderAdmin(stream)}
+            <i className="large middle aligned icon camera" />
+            <Link className="content" to={`/streams/${stream.id}`}>
+              {stream.title}
+              <div className="description">{stream.description}</div>
+            </Link>
+          </div>
+        );
+      }
     });
   }
 
   renderCreate() {
-    if (this.props.isSignedIn) {
+    console.log(this.props.match.params.id);
+    if (this.props.isSignedIn && this.props.match.params.id != null) {
       return (
         <div style={{ textAlign: 'right' }}>
           <Link className="ui button primary" to="/streams/new">
@@ -51,7 +60,7 @@ class StreamList extends React.Component {
   }
 
   render() {
-    console.log(this.props.streams);
+    //console.log(this.props.match.params.id);
     return (
       <div>
         <h2>Streams</h2>

@@ -1,31 +1,16 @@
 {
   "streams": [
     {
-      "title": "my stream",
-      "description": "this is a test stream",
+      "title": "Sebastian is streaming",
+      "description": "Welcome to my stream",
+      "userId": "101356007217161365991",
       "id": 1
     },
     {
-      "title": "New stream",
-      "description": "test",
+      "title": "New stream for me",
+      "description": "weiufbwef",
+      "userId": "106189150192848035595",
       "id": 2
-    },
-    {
-      "title": "new stream",
-      "description": "update this stream",
-      "id": 3
-    },
-    {
-      "title": "delete this",
-      "description": "delete",
-      "userId": "101356007217161365991",
-      "id": 4
-    },
-    {
-      "title": "1",
-      "description": "1",
-      "userId": "101356007217161365991",
-      "id": 5
     }
   ]
 }
